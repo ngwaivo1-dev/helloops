@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.get("/")
 def home():
-    return "HelloOps 🚀"
+    return "HelloOps 🚀 v1.0.1"
 
 @app.get("/health")
 def health():
