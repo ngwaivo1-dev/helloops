@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloops
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: helloops
+  template:
+    metadata:
+      labels:
+        app: helloops
+    spec:
+      containers:
+      - name: helloops
+        image: ghcr.io/ngwaivo1-dev/helloops/helloops:latest
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            cpu: "50m"
+            memory: "64Mi"
+          limits:
+            cpu: "200m"
+            memory: "128Mi"
+        env:
+        - name: APP_VERSION
+          value: "1.0.0"
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 10
