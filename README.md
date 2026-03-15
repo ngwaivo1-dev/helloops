@@ -169,3 +169,17 @@ Real-world DevOps challenges solved during this project:
 - [ ] Helm chart packaging
 - [ ] Load testing and performance benchmarking
 - [ ] Production cloud deployment on AWS EKS
+
+## Screenshots
+
+### ArgoCD Deployment
+![ArgoCD](screenshots/argocd.png.png)
+
+### GitHub Actions Pipeline
+![GitHub Actions](screenshots/github-actions.png.png)
+
+### Application Running
+![Application](screenshots/app.png.png)
+
+### Grafana Monitoring Dashboard
+![Grafana](screenshots/grafana.png.png)
